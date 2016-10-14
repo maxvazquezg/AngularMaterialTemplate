@@ -2,22 +2,90 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="App">
 <head>
     <title>Sample AngularJS project using Visual Studio</title>
+    <link href="css/angular-material.css" type="text/css" rel="stylesheet" />
+
     <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular-animate.js"></script>
+    <script src="../Scripts/angular-aria.js"></script>
+    <script src="../Scripts/angular-material.js"></script>
     <script src="../Scripts/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="controllers/homeController.js"></script>
     <script src="controllers/aboutController.js"></script>
 </head>
-<body>
-    <div>
-        <a href="#/">Home</a>
-        <a href="#/about">About</a>
+<body ng-cloak layout="column" ng-controller="mainController">
+    <!-- Barra navegación (Arriba) -->
+    <!-- Container #1 (see wireframe) -->
+    <md-toolbar layout="row" class="md-toolbar-tools">
+        <md-button class="menu md-icon-button" hide-gt-sm ng-click="toggleLeft()"
+                   aria-label="Show User List">
+            <md-icon md-svg-icon="svg/menu.svg"></md-icon>
+        </md-button>
+        <h1>Angular Material - Starter App</h1>
+    </md-toolbar>
+
+    <!-- Contenedor principal -->
+    <!-- Container #2 -->
+    <div flex layout="row">
+
+        <!-- Barra lateral izquierda -->
+        <!-- Container #3 -->
+        <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
+                    md-component-id="left">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Disabled Backdrop</h1>
+            </md-toolbar>
+
+            <md-content layout-margin>
+                <p>
+                    This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
+                </p>
+
+                <md-list flex>
+                    <!-- ngRepeat puede ser utilizado para llenar el menú -->
+                    <md-list-item  class="md-2-line">
+                        <div class="md-list-item-text" layout="column">
+                            <md-button ng-class="{'selected' : user === $ctrl.selected }">
+                                <md-icon md-svg-icon="svg/avatar-1.svg"></md-icon>
+                                <h3>Inicio</h3>
+                                <p>Descipción del menú</p>
+                            </md-button>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="md-2-line">
+                        <div class="md-list-item-text" layout="column">
+                            <md-button ng-class="{'selected' : user === $ctrl.selected }">
+                                <md-icon md-svg-icon="svg/avatar-1.svg"></md-icon>
+                                <h3>Inicio</h3>
+                                <p>Descipción del menú</p>
+                            </md-button>
+                        </div>
+                    </md-list-item>
+                </md-list>
+
+                <md-button ng-click="toggleLeft()" class="md-accent">
+                    Close this Sidenav
+                </md-button>
+            </md-content>
+        </md-sidenav>
+
+        <!-- Mostrar contenido -->
+        <!-- Container #4 -->
+        <md-content flex layout-padding id="content">
+            <div>
+                <a href="#/">Home</a>
+                <a href="#/about">About</a>
+            </div>
+
+            <div>
+                <h1>{{message}}</h1>
+                <div ng-view>
+                </div>
+            </div>
+        </md-content>
+
     </div>
 
-    <div ng-controller="mainController">
-        <h1>{{message}}</h1>
-        <div ng-view>
-        </div>
-    </div>
+
 </body>
 </html>

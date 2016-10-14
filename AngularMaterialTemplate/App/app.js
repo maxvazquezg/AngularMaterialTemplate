@@ -1,4 +1,4 @@
-﻿var app = angular.module('App', ['ngRoute'])
+﻿var app = angular.module('App', ['ngRoute', 'ngMaterial'])
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -13,6 +13,13 @@
           redirectTo: '/'
       });
 }])
-.controller('mainController', function ($scope) {
+.controller('mainController', function ($scope, $mdSidenav) {
     $scope.message = "Hola AngularJS";
+    $scope.toggleLeft = buildToggler('left');
+
+    function buildToggler(componentId) {
+        return function () {
+            $mdSidenav(componentId).toggle();
+        }
+    }
 });;

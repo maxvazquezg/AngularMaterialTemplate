@@ -123,7 +123,19 @@
     <Content Include="App\app.js" />
     <Content Include="App\controllers\aboutController.js" />
     <Content Include="App\controllers\homeController.js" />
+    <Content Include="App\css\angular-material.css" />
     <Content Include="App\index.html" />
+    <Content Include="App\svg\avatar-1.svg" />
+    <Content Include="App\svg\avatar-4.svg" />
+    <Content Include="App\svg\avatars.svg" />
+    <Content Include="App\svg\cake.svg" />
+    <Content Include="App\svg\google_plus.svg" />
+    <Content Include="App\svg\hangouts.svg" />
+    <Content Include="App\svg\mail.svg" />
+    <Content Include="App\svg\menu.svg" />
+    <Content Include="App\svg\phone.svg" />
+    <Content Include="App\svg\share.svg" />
+    <Content Include="App\svg\twitter.svg" />
     <Content Include="App\views\about.html" />
     <Content Include="App\views\home.html" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
@@ -137,6 +149,7 @@
     <Content Include="scripts\angular-csp.css" />
     <Content Include="scripts\angular-loader.js" />
     <Content Include="scripts\angular-loader.min.js" />
+    <Content Include="scripts\angular-material.js" />
     <Content Include="scripts\angular-message-format.js" />
     <Content Include="scripts\angular-message-format.min.js" />
     <Content Include="scripts\angular-messages.js" />
